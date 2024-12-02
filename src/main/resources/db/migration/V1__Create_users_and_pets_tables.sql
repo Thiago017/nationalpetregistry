@@ -4,6 +4,7 @@
 CREATE TABLE users (
   id UUID PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
+  gender CHAR(1) CHECK (gender IN ('M', 'F')),
   date_of_birth DATE NOT NULL,
   phone VARCHAR(20),
   address TEXT,
