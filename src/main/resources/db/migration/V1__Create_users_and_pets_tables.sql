@@ -8,7 +8,7 @@ CREATE TABLE users (
   date_of_birth DATE NOT NULL,
   phone VARCHAR(20),
   address TEXT,
-  identification_document VARCHAR(20) NOT NULL UNIQUE
+  identification_document VARCHAR(14) NOT NULL UNIQUE CHECK (identification_document ~ '^\d{3}\.\d{3}\.\d{3}-\d{2}$')
 );
 
 -- Create table pets
