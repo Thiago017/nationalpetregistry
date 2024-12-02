@@ -12,7 +12,7 @@
 
 ## Build
 
-A execução do build é feita através do comando `./gradlew build` na raiz do projeto.
+A execução do build é feita através do comando `mvn package` na raiz do projeto.
 
 > [!IMPORTANT]
 > 
