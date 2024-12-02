@@ -6,9 +6,9 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   gender VARCHAR(1) CHECK (gender IN ('M', 'F')),
   date_of_birth DATE NOT NULL,
-  phone VARCHAR(20),
+  phone VARCHAR(20) NOT NULL UNIQUE CHECK (phone ~ '^\+\d{2} \(\d{2}\) \d{5}-\d{4}$');,
   address TEXT,
-  identification_document VARCHAR(14) NOT NULL UNIQUE CHECK (identification_document ~ '^\d{3}\.\d{3}\.\d{3}-\d{2}$')
+  identification_document VARCHAR(14) NOT NULL UNIQUE CHECK (identification_document ~ '^\(\d{2}\) \d{5}-\d{4}$')
 );
 
 -- Create table pets
