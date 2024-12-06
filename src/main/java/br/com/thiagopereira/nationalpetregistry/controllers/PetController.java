@@ -32,6 +32,12 @@ public class PetController {
     this.petService = petService;
   }
 
+  @GetMapping("/owner/{ownerId}")
+  @Operation(summary = "Find pets by owner id", description = "Find pets by owner id")
+  public ResponseEntity<List<Pet>> findByOwnerId(@PathVariable UUID ownerId) {
+    return ResponseEntity.ok(petService.findByOwnerId(ownerId));
+  }
+
   @GetMapping
   @Operation(summary = "Find all pets", description = "Find all pets.")
   public ResponseEntity<List<Pet>> findAll() {

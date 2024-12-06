@@ -21,6 +21,10 @@ public class PetService {
     this.petRepository = petRepository;
   }
 
+  public List<Pet> findByOwnerId(UUID id) {
+    return petRepository.findByOwnerId(id);
+  }
+
   public List<Pet> findAll() {
     return petRepository.findAll();
   }
