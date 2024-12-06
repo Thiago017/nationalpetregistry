@@ -6,9 +6,9 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   gender VARCHAR(1) CHECK (gender IN ('M', 'F')),
   date_of_birth DATE NOT NULL,
-  phone VARCHAR(20) NOT NULL UNIQUE CHECK (phone ~ '^\+\d{2} \(\d{2}\) \d{5}-\d{4}$');,
+  phone VARCHAR(20) NOT NULL UNIQUE,
   address TEXT,
-  identification_document VARCHAR(14) NOT NULL UNIQUE CHECK (identification_document ~ '^\(\d{2}\) \d{5}-\d{4}$')
+  identification_document VARCHAR(14) NOT NULL UNIQUE
 );
 
 -- Create table pets
@@ -18,7 +18,7 @@ CREATE TABLE pets (
   breed VARCHAR(255),
   gender VARCHAR(1) CHECK (gender IN ('M', 'F')),
   date_of_birth DATE NOT NULL,
-  identification_document VARCHAR(15) NOT NULL UNIQUE CHECK (identification_document ~ '^\d{2}\.\d{3}\.\d{3}-\d{3}$'),
+  identification_document VARCHAR(15) NOT NULL UNIQUE,
   owner_id UUID NOT NULL,
   FOREIGN KEY (owner_id) REFERENCES users (id) ON DELETE CASCADE
 );
