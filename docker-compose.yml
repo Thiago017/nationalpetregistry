@@ -7,7 +7,7 @@ volumes:
 
 services:
   postgresdb:
-    image: postgres:latest
+    image: postgres:16-bullseye
     container_name: national_pet_registry_postgres
     restart: on-failure
     environment:
