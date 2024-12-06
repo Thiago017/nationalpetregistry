@@ -11,4 +11,4 @@ ADD
 ALTER TABLE
   pets
 ADD
-  CONSTRAINT chk_rg_format CHECK (identification_document ~ '^\d{1,9}$');
+  CONSTRAINT chk_rg_format CHECK (identification_document ~ '^\d{2}\.\d{3}\.\d{3}-\d{1}|\d{9}$');
