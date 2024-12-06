@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NationalpetregistryApplication {
+public class NationalPetRegistryApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NationalpetregistryApplication.class, args);
+		SpringApplication.run(NationalPetRegistryApplication.class, args);
 	}
-
 }
