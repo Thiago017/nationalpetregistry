@@ -33,7 +33,7 @@ public class User {
   @Column(name = "gender", length = 1)
   private String gender;
 
-  @Column(name = "date_of_birth", nullable = false)
+  @Column(name = "date_of_birth", length = 10, nullable = false)
   private LocalDate dateOfBirth;
 
   @Column(length = 20)
@@ -42,7 +42,7 @@ public class User {
   @Column(columnDefinition = "TEXT")
   private String address;
 
-  @Column(name = "identification_document", nullable = false, unique = true)
+  @Column(name = "identification_document", length = 14, nullable = false, unique = true)
   private String identificationDocument;
 
   // Validations
