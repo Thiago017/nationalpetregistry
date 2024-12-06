@@ -17,8 +17,7 @@ public class UserService {
   private final UserRepository userRepository;
 
   public UserService(
-    UserRepository userRepository
-  ) {
+      UserRepository userRepository) {
     this.userRepository = userRepository;
   }
 
@@ -28,7 +27,7 @@ public class UserService {
 
   public User findById(UUID id) {
     return userRepository.findById(id)
-      .orElseThrow(() -> new EntityNotFoundException("User not found"));
+        .orElseThrow(() -> new EntityNotFoundException("User not found"));
   }
 
   public User save(User user) {
@@ -36,7 +35,7 @@ public class UserService {
   }
 
   public User update(UUID id, User updatedUser) {
-    User user = this.findById(id);
+    User user = findById(id);
     user.setName(updatedUser.getName());
     user.setAddress(updatedUser.getAddress());
     user.setDateOfBirth(updatedUser.getDateOfBirth());
@@ -47,7 +46,7 @@ public class UserService {
   }
 
   public void delete(UUID id) {
-    User user = this.findById(id);
+    User user = findById(id);
     userRepository.delete(user);
   }
 
